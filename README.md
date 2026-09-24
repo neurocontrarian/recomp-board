@@ -6,8 +6,8 @@ Three ways to put a project on the board or change its row:
 
 1. **Commit `.recomp-board.json` to your own repository**, then give its address with the
    manifest form here. Your row says what the file says. Details on the site.
-2. **Open an issue with a form** in this repository, for a project that isn't yours, a
-   correction, or a claim. A bot checks the repository, writes the row and answers in the
+2. **Open an issue with the form** in this repository, for a project that isn't yours, a
+   correction, or to claim your row without the file. A bot checks the repository, writes the row and answers in the
    issue, usually within a few minutes.
 3. **Ask your AI assistant** to follow https://recomp.fyi/agents.md.
 

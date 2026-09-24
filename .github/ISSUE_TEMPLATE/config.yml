@@ -1,8 +1,1 @@
 blank_issues_enabled: true
-contact_links:
-  - name: The board
-    url: https://recomp.fyi
-    about: Check the table before opening an issue.
-  - name: Instructions for AI agents
-    url: https://recomp.fyi/agents.md
-    about: Schema, rules and the exact steps.

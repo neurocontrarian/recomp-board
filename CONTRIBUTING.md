@@ -48,7 +48,7 @@ URL. Any account can send it, the file in the repository is the proof.
 **Issue form.** [Add or correct a project](../../issues/new?template=2-add-project.yml):
 guided fields, no JSON. A bot validates it, writes the row and closes the issue, usually
 within a few minutes. If it fails, it comments with the exact reason; edit the issue and it
-runs again. For someone else's repository only the facts are kept (game, console, kind of
+runs again. For someone else's repository only the facts are kept (game, system, kind of
 work, name); the owner writes the rest when they claim the row.
 
 **Your AI assistant.** Point it at [`agents.md`](https://recomp.fyi/agents.md), which holds the schema, the
@@ -64,7 +64,7 @@ Required: `id`, `game`, `system`, `type`, `project`, `status`, `repo`.
 | `system` | `N64`, `PS1`, `PS2`, `GameCube`, `Saturn`, `Dreamcast`, … Reuse an existing spelling so the filter stays tidy. |
 | `type` | `recomp` or `decomp`. |
 | `status` | `exploring`, `in-progress`, `playable`, `released`, `paused`. Self-reported, and separate from activity. |
-| `targets` | Where your build runs: `["PC", "Steam Deck", "Switch"]`. Different from `system`, which is the console the game shipped on. |
+| `targets` | Where your build runs: `["PC", "Steam Deck", "Switch"]`. Different from `system`, which is the platform the game shipped on. |
 | `approach` | Toolchain or method, one line. |
 | `repo` | Public repository, any host. See below. |
 | `maintainers` | `name` plus any https link where you can be reached. |
@@ -95,11 +95,11 @@ third-party rows accountable.
 
 ## Claiming, editing, releasing
 
-The [claim form](../../issues/new?template=3-claim-or-release.yml), sent from the account that
-owns the repo with the row's ID (last column of the table), makes the row yours: only you can
-edit it, and the periodic scan of public repositories stops filling it in. The same form
-hands it back to the community. A `.recomp-board.json` does the same without matching
-accounts, which is the way for repositories owned by an organisation.
+Two ways to make a row yours: commit a `.recomp-board.json` to the repository (any host, any
+account, and the way for repositories owned by an organisation), or send the
+[add or correct form](../../issues/new?template=2-add-project.yml) from the GitHub account
+that owns the repository. Only you can edit it from then on, and the periodic scan stops
+filling it in. To hand it back: delete the file, or tick "Release my claim" in the same form.
 
 Rows aren't deleted through the form. A project with a public repo stays on the board,
 otherwise the ageing rules could be dodged by deleting the row, and the next scan would re-add

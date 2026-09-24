@@ -9,6 +9,10 @@ body:
         A bot checks the repository, writes the row and answers here, usually within a few
         minutes. If something is wrong it says exactly what; edit this issue and it runs again.
 
+        **Your own project?** Send it from the account that owns the repository and the row is
+        yours (claimed): only you can edit it. Or commit a `.recomp-board.json` and use the
+        manifest form, which works whatever the account or the host.
+
         **Rules:** the repository must be public and have at least one commit. No ROMs, ISOs,
         game files or links to them. Two projects on the same game are both welcome.
 
@@ -36,8 +40,8 @@ body:
   - type: dropdown
     id: system
     attributes:
-      label: Console the game shipped on
-      description: The original platform, not where the port runs.
+      label: System the game shipped on
+      description: The original platform (console, computer or arcade board), not where the port runs.
       options:
         - N64
         - PS1
@@ -66,13 +70,23 @@ body:
         - Neo Geo
         - Arcade
         - Virtual Boy
+        - PC (DOS)
+        - PC (Windows)
+        - Mac
+        - Amiga
+        - Atari ST
+        - Commodore 64
+        - ZX Spectrum
+        - Amstrad CPC
+        - MSX
+        - PC-98
         - Other (write it below)
     validations:
       required: true
   - type: input
     id: system_other
     attributes:
-      label: Other console
+      label: Other system
       description: Only if you picked "Other" above.
   - type: dropdown
     id: type
@@ -159,6 +173,12 @@ body:
     attributes:
       label: Notes
       description: Up to 600 characters. What works, what's next, what hurts.
+  - type: checkboxes
+    id: release
+    attributes:
+      label: Hand the row back
+      options:
+        - label: Release my claim. The row stays on the board, unclaimed, and anyone may correct it again.
   - type: checkboxes
     id: rules
     attributes:
