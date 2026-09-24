@@ -1,0 +1,17 @@
+name: Something else
+description: A question, a row that should not exist, a problem with the board. Read by a person.
+title: ""
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This one isn't handled by the bot: a person reads it and answers here.
+
+        To add, correct or claim a row, the other two forms are faster.
+  - type: textarea
+    id: message
+    attributes:
+      label: Your message
+      description: If it's about a row, give its ID (last column of the table) or the repository URL.
+    validations:
+      required: true

@@ -89,7 +89,7 @@ behind it anywhere, that's rule 01, and it's the only thing keeping the table ho
 ## Who can edit an unclaimed row
 
 Whoever added it, and the owner of the repository. A row that came from the repository scan
-has no human parent, so anyone may correct it. Everything else goes through a plain issue,
+has no human parent, so anyone may correct it. Everything else goes through the "Something else" form,
 in the open. Every submission carries the GitHub account that sent it, which is what keeps
 third-party rows accountable.
 
@@ -104,4 +104,4 @@ filling it in. To hand it back: delete the file, or tick "Release my claim" in t
 Rows aren't deleted through the form. A project with a public repo stays on the board,
 otherwise the ageing rules could be dodged by deleting the row, and the next scan would re-add
 it. If a row shouldn't exist at all (wrong repo, not a game project, a maintainer who wants no
-listing), open a plain issue and say so.
+listing), use the "Something else" form and say so.
