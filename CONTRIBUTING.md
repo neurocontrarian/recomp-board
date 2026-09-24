@@ -58,10 +58,10 @@ Required: `id`, `game`, `system`, `type`, `project`, `status`, `repo`.
 | Field | Notes |
 | --- | --- |
 | `id` | Lowercase slug, unique on the board. |
-| `system` | `N64`, `PS1`, `PS2`, `GameCube`, `Saturn`, `Dreamcast`, … Reuse an existing spelling so the filter stays tidy. |
+| `system` | The platform of the binary you recompile or decompile: `N64`, `PS1`, `PS2`, `GameCube`, `Saturn`, `Dreamcast`, … Reuse an existing spelling so the filter stays tidy. |
 | `type` | `recomp` or `decomp`. |
 | `status` | `exploring`, `in-progress`, `playable`, `released`, `paused`. Self-reported, and separate from activity. |
-| `targets` | Where your build runs: `["PC", "Steam Deck", "Switch"]`. Different from `system`, which is the platform the game shipped on. |
+| `targets` | Where your build runs: `["PC", "Steam Deck", "Switch"]`. Different from `system`, which is the platform of the binary you recompile or decompile. |
 | `toolchain` | Recompiler or toolkit: `N64recomp`, `Xenonrecomp`, `Rexglue`, `Psxrecomp`, `Snesrecomp`, `Decomp-toolkit`, `Splat`... Capital first letter, the rest lowercase. |
 | `approach` | Method, one line. |
 | `repo` | Public repository, any host. See below. |

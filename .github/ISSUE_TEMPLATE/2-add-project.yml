@@ -40,8 +40,8 @@ body:
   - type: dropdown
     id: system
     attributes:
-      label: System the game shipped on
-      description: The original platform (console, computer or arcade board), not where the port runs.
+      label: System of the binary you recompile or decompile
+      description: The platform of the binary your project works from (console, computer or arcade board), not where your build runs. A PS3 re-release of a Neo Geo game is PS3.
       options:
         - N64
         - PS1
