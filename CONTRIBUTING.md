@@ -72,7 +72,7 @@ Required: `id`, `game`, `system`, `type`, `project`, `status`, `repo`.
 | `updated` | `YYYY-MM-DD`, set for you on intake. |
 
 **Filled in automatically, leave them out:** `version` (latest release tag), `lastCommit`,
-`activity`, `repoStatus`, `claimed`, `addedBy`. The daily job overwrites whatever you put there.
+`repoStatus`, `claimed`, `addedBy`. The daily job overwrites whatever you put there.
 
 ## Repos that aren't on GitHub
 
