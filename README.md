@@ -12,7 +12,4 @@ Three ways to put a project on the board or change its row:
 3. **Ask your AI assistant** to follow https://recomp.fyi/agents.md.
 
 Rules: a public repository with at least one commit, no ROMs or links to game files, two
-projects on the same game are both welcome. Rows are not deleted on request; a claim can be
-released at any time.
-
-The table data is not open data: see the terms at https://recomp.fyi/#terms.
+projects on the same game are both welcome.
