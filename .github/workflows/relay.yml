@@ -1,0 +1,32 @@
+name: Relay to the board
+
+# This repository only holds the submission form. The board itself is built elsewhere: this
+# workflow passes the issue number on, and the board reads the issue, applies it and answers
+# here in a comment. No issue content goes through this workflow.
+#
+# Secret to set once: ENGINE_TOKEN, a fine-grained token with "Contents: read and write" on
+# the board's repository (GitHub requires that permission to send a dispatch).
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions: {}
+
+jobs:
+  relay:
+    # Every issue is passed on: the board recognises a submission by its content and leaves
+    # plain issues for a human. Labels can't be relied on, outsiders can't set them.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hand the issue number to the board
+        env:
+          TOKEN: ${{ secrets.ENGINE_TOKEN }}
+          ENGINE: ${{ vars.ENGINE_REPO }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: |
+          curl --fail-with-body -sS -X POST \
+            -H "Authorization: Bearer $TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/$ENGINE/dispatches" \
+            -d "{\"event_type\":\"intake\",\"client_payload\":{\"issue\":$NUMBER}}"

@@ -1,0 +1,27 @@
+name: My repository has a .recomp-board.json
+description: Point the board at your repository. The file in it is the row, nothing else to fill in.
+title: "Manifest: "
+labels: ["intake"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The board reads `.recomp-board.json` at the root of your repository's default branch,
+        creates or claims the row, and writes exactly what the file says. The file is the
+        proof: whoever can commit to the repository controls the row, so it doesn't matter
+        which account opens this issue.
+
+        On GitHub the daily job also finds the file by itself, usually within a day. Use this
+        form to be listed right away, or when your repository is on GitLab, Codeberg, a Gitea
+        or Forgejo instance.
+
+        To create a new row the file needs at least `game`, `system` and `type`. The format
+        is on the board's page.
+  - type: input
+    id: manifest_repo
+    attributes:
+      label: Repository with a .recomp-board.json
+      description: The public URL of the repository, not of the file.
+      placeholder: https://github.com/you/your-recomp
+    validations:
+      required: true

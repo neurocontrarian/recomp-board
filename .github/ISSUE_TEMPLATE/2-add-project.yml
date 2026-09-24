@@ -1,0 +1,170 @@
+name: Add or correct a project
+description: Put a recomp or decomp on the board, yours or someone else's, or fix a row.
+title: "Add: "
+labels: ["intake"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A bot checks the repository, writes the row and answers here, usually within a few
+        minutes. If something is wrong it says exactly what; edit this issue and it runs again.
+
+        **Rules:** the repository must be public and have at least one commit. No ROMs, ISOs,
+        game files or links to them. Two projects on the same game are both welcome.
+
+        **Someone else's project?** Fill in the first part only. The row lands *unclaimed*,
+        built from facts, and its owner fills in the rest when they claim it. Anything in the
+        second part is ignored unless the repository is yours.
+
+        **Already on the board?** Send the same repository again with the corrected values.
+        Empty fields leave the row as it is.
+  - type: input
+    id: repo
+    attributes:
+      label: Public repository URL
+      placeholder: https://github.com/someone/wave-race-64-recomp
+    validations:
+      required: true
+  - type: input
+    id: game
+    attributes:
+      label: Game
+      description: The title as it shipped.
+      placeholder: "The Legend of Zelda: Majora's Mask"
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: Console the game shipped on
+      description: The original platform, not where the port runs.
+      options:
+        - N64
+        - PS1
+        - PS2
+        - PS3
+        - GameCube
+        - Wii
+        - Wii U
+        - Xbox
+        - Xbox 360
+        - Switch
+        - NES
+        - SNES
+        - GB
+        - GBC
+        - GBA
+        - NDS
+        - 3DS
+        - PSP
+        - PS Vita
+        - Genesis
+        - Sega CD
+        - 32X
+        - Saturn
+        - Dreamcast
+        - Neo Geo
+        - Arcade
+        - Virtual Boy
+        - Other (write it below)
+    validations:
+      required: true
+  - type: input
+    id: system_other
+    attributes:
+      label: Other console
+      description: Only if you picked "Other" above.
+  - type: dropdown
+    id: type
+    attributes:
+      label: Kind of work
+      options:
+        - recomp (static recompilation of the shipped binary)
+        - decomp (decompilation back to source)
+    validations:
+      required: true
+  - type: input
+    id: project
+    attributes:
+      label: Project name
+      description: Optional. The repository name is used when this is empty.
+      placeholder: Wave Race 64 Recompiled
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Only if the repository is yours
+        Taken into account when the account opening this issue owns the repository.
+        Otherwise ignored.
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - Exploring
+        - In progress
+        - Playable
+        - Released
+        - Paused
+  - type: checkboxes
+    id: targets
+    attributes:
+      label: Where the build runs
+      options:
+        - label: Windows
+        - label: Linux
+        - label: macOS
+        - label: Steam Deck
+        - label: Android
+        - label: iOS
+        - label: Switch
+        - label: Browser
+  - type: input
+    id: targets_other
+    attributes:
+      label: Other platforms
+      description: Comma separated.
+  - type: input
+    id: approach
+    attributes:
+      label: Toolchain or method
+      placeholder: N64Recomp, RT64 renderer
+  - type: input
+    id: maintainer
+    attributes:
+      label: Your name or handle
+  - type: input
+    id: maintainer_link
+    attributes:
+      label: Where people can reach you
+      description: Any https link.
+  - type: textarea
+    id: links
+    attributes:
+      label: Links
+      description: One per line, label then URL. Devlog, Discord invite, thread. Never a game file.
+      placeholder: |
+        Discord https://discord.gg/...
+        Devlog https://...
+  - type: textarea
+    id: help
+    attributes:
+      label: Help wanted
+      description: One per line, short. Shown on the board.
+      placeholder: |
+        Audio timing
+        Controller mapping on Linux
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Up to 600 characters. What works, what's next, what hurts.
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Before sending
+      options:
+        - label: The repository is public and has at least one commit.
+          required: true
+        - label: This issue contains no ROM, ISO, game file or link to one.
+          required: true
