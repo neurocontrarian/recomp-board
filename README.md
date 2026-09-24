@@ -1,4 +1,4 @@
-# Recomp Board submissions
+# recomp.board submissions
 
 The table lives at **https://recomp.fyi**. This repository only receives submissions.
 
