@@ -138,11 +138,33 @@ body:
     attributes:
       label: Other platforms
       description: Comma separated.
-  - type: input
-    id: approach
+  - type: dropdown
+    id: toolchain
     attributes:
-      label: Toolchain or method
-      placeholder: N64Recomp, RT64 renderer
+      label: Toolchain
+      options:
+        - N64recomp
+        - Xenonrecomp
+        - Rexglue
+        - Xboxrecomp
+        - Ps3recomp
+        - Ps2recomp
+        - Psxrecomp
+        - Psxport
+        - Snesrecomp
+        - Nesrecomp
+        - Gbarecomp
+        - Gb-recompiled
+        - Segagenesisrecomp
+        - Wiicompiled
+        - Decomp-toolkit
+        - Splat
+        - Other (write it below)
+  - type: input
+    id: toolchain_other
+    attributes:
+      label: Other toolchain
+      description: Only if you picked "Other" above.
   - type: input
     id: maintainer
     attributes:

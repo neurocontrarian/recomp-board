@@ -1,5 +1,5 @@
 name: Something else
-description: A question, a row that should not exist, a problem with the board. Read by a person.
+description: A question, a problem with a row or with the board, an idea. Read by a person.
 title: ""
 body:
   - type: markdown

@@ -51,9 +51,6 @@ within a few minutes. If it fails, it comments with the exact reason; edit the i
 runs again. For someone else's repository only the facts are kept (game, system, kind of
 work, name); the owner writes the rest when they claim the row.
 
-**Your AI assistant.** Point it at [`agents.md`](https://recomp.fyi/agents.md), which holds the schema, the
-rules and the exact commands. Nothing on this board needs a human in the loop.
-
 ## Fields
 
 Required: `id`, `game`, `system`, `type`, `project`, `status`, `repo`.
@@ -65,7 +62,8 @@ Required: `id`, `game`, `system`, `type`, `project`, `status`, `repo`.
 | `type` | `recomp` or `decomp`. |
 | `status` | `exploring`, `in-progress`, `playable`, `released`, `paused`. Self-reported, and separate from activity. |
 | `targets` | Where your build runs: `["PC", "Steam Deck", "Switch"]`. Different from `system`, which is the platform the game shipped on. |
-| `approach` | Toolchain or method, one line. |
+| `toolchain` | Recompiler or toolkit: `N64recomp`, `Xenonrecomp`, `Rexglue`, `Psxrecomp`, `Snesrecomp`, `Decomp-toolkit`, `Splat`... Capital first letter, the rest lowercase. |
+| `approach` | Method, one line. |
 | `repo` | Public repository, any host. See below. |
 | `maintainers` | `name` plus any https link where you can be reached. |
 | `links` | Devlog, Discord invite, thread. Never a game file. |
@@ -83,7 +81,7 @@ Gitea/Forgejo instances) have their commit dates and release tags read through t
 other hosts are checked for being reachable, and their dates stay as reported.
 
 Submitting happens through this repo. The issue form needs a free GitHub account; the
-`agents.md` route needs none of your own. What is not accepted is a row with no public code
+manifest needs none. What is not accepted is a row with no public code
 behind it anywhere, that's rule 01, and it's the only thing keeping the table honest.
 
 ## Who can edit an unclaimed row
@@ -100,8 +98,3 @@ account, and the way for repositories owned by an organisation), or send the
 [add or correct form](../../issues/new?template=2-add-project.yml) from the GitHub account
 that owns the repository. Only you can edit it from then on, and the periodic scan stops
 filling it in. To hand it back: delete the file, or tick "Release my claim" in the same form.
-
-Rows aren't deleted through the form. A project with a public repo stays on the board,
-otherwise the ageing rules could be dodged by deleting the row, and the next scan would re-add
-it. If a row shouldn't exist at all (wrong repo, not a game project, a maintainer who wants no
-listing), use the "Something else" form and say so.
