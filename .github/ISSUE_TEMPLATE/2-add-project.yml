@@ -92,12 +92,18 @@ body:
     id: type
     attributes:
       label: Kind of work
-      description: A repository that does both has one row of each, and this picks the row the form writes. To add the second row, say so with the "Something else" form.
+      description: A repository that does both has one row of each, and this picks the row the form writes. Tick "This repository does both" below to add the missing one.
       options:
         - recomp (static recompilation of the shipped binary)
         - decomp (decompilation back to source)
     validations:
       required: true
+  - type: checkboxes
+    id: both
+    attributes:
+      label: Both kinds of work
+      options:
+        - label: This repository does both, a decomp and a recomp. The board keeps one row of each; sent from the account that owns the repository, both rows are claimed at once.
   - type: input
     id: project
     attributes:
@@ -201,7 +207,7 @@ body:
     attributes:
       label: Hand the row back
       options:
-        - label: Release my claim. The row stays on the board, unclaimed, and anyone may correct it again.
+        - label: Release my claim. The rows of this repository stay on the board, unclaimed, and anyone may correct them again.
   - type: checkboxes
     id: rules
     attributes:
