@@ -54,7 +54,7 @@ work, name); the owner writes the rest when they claim the row.
 ## Fields
 
 Every value the board accepts, with its limits, is listed on the site under
-[Every field and the values it takes](https://recomp.fyi/#values). That list is built from the
+[Every field and the values it takes](https://recomp.fyi/add.html#values). That list is built from the
 code that reads the file, so it is the one to trust if this page ever lags behind.
 
 Required: `id`, `game`, `system`, `type`, `project`, `status`, `repo`.
