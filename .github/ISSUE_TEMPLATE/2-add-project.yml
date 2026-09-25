@@ -216,6 +216,7 @@ body:
       options:
         - Exploring
         - In progress
+        - Complete
         - Paused
   - type: dropdown
     id: decomp_toolchain
