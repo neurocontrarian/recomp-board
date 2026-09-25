@@ -93,7 +93,7 @@ body:
     id: type
     attributes:
       label: Kind of work
-      description: A repository that does both gets one row of each. With "both", this form writes the two rows at once and adds the one that is missing; sent from the account that owns the repository, both are claimed.
+      description: A repository that does both gets one row of each. With "both", this form writes the two rows at once, each from its own section below, and adds the one that is missing; sent from the account that owns the repository, both are claimed.
       options:
         - recomp (static recompilation of the shipped binary)
         - decomp (decompilation back to source)
@@ -113,62 +113,6 @@ body:
         ### Only if the repository is yours
         Taken into account when the account opening this issue owns the repository.
         Otherwise ignored.
-  - type: dropdown
-    id: status
-    attributes:
-      label: Status
-      description: With "both", the status goes to the recomp row.
-      options:
-        - Exploring
-        - In progress
-        - Playable
-        - Released
-        - Paused
-  - type: checkboxes
-    id: targets
-    attributes:
-      label: Where the build runs
-      options:
-        - label: Windows
-        - label: Linux
-        - label: macOS
-        - label: Steam Deck
-        - label: Android
-        - label: iOS
-        - label: Switch
-        - label: Browser
-  - type: input
-    id: targets_other
-    attributes:
-      label: Other platforms
-      description: Comma separated.
-  - type: dropdown
-    id: toolchain
-    attributes:
-      label: Toolchain
-      options:
-        - N64recomp
-        - Xenonrecomp
-        - Rexglue
-        - Xboxrecomp
-        - Ps3recomp
-        - Ps2recomp
-        - Psxrecomp
-        - Psxport
-        - Snesrecomp
-        - Nesrecomp
-        - Gbarecomp
-        - Gb-recompiled
-        - Segagenesisrecomp
-        - Wiicompiled
-        - Decomp-toolkit
-        - Splat
-        - Other (write it below)
-  - type: input
-    id: toolchain_other
-    attributes:
-      label: Other toolchain
-      description: Only if you picked "Other" above.
   - type: input
     id: maintainer
     attributes:
@@ -199,6 +143,93 @@ body:
     attributes:
       label: Notes
       description: Up to 600 characters. What works, what's next, what hurts.
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Recomp (if applicable)
+        Fill this part when the kind of work is recomp or both.
+  - type: dropdown
+    id: recomp_status
+    attributes:
+      label: Recomp status
+      options:
+        - Exploring
+        - In progress
+        - Playable
+        - Released
+        - Paused
+  - type: checkboxes
+    id: recomp_targets
+    attributes:
+      label: Where the recomp runs
+      options:
+        - label: Windows
+        - label: Linux
+        - label: macOS
+        - label: Steam Deck
+        - label: Android
+        - label: iOS
+        - label: Switch
+        - label: Browser
+  - type: input
+    id: recomp_targets_other
+    attributes:
+      label: Other recomp platforms
+      description: Comma separated.
+  - type: dropdown
+    id: recomp_toolchain
+    attributes:
+      label: Recomp toolchain
+      options:
+        - N64recomp
+        - Xenonrecomp
+        - Rexglue
+        - Xboxrecomp
+        - Ps3recomp
+        - Ps2recomp
+        - Psxrecomp
+        - Psxport
+        - Recompone
+        - Snesrecomp
+        - Nesrecomp
+        - Gbarecomp
+        - Gb-recompiled
+        - Segagenesisrecomp
+        - Wiicompiled
+        - Other (write it below)
+  - type: input
+    id: recomp_toolchain_other
+    attributes:
+      label: Other recomp toolchain
+      description: Only if you picked "Other" above.
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Decomp (if applicable)
+        Fill this part when the kind of work is decomp or both.
+  - type: dropdown
+    id: decomp_status
+    attributes:
+      label: Decomp status
+      options:
+        - Exploring
+        - In progress
+        - Paused
+  - type: dropdown
+    id: decomp_toolchain
+    attributes:
+      label: Decomp toolchain
+      options:
+        - Decomp-toolkit
+        - Splat
+        - Other (write it below)
+  - type: input
+    id: decomp_toolchain_other
+    attributes:
+      label: Other decomp toolchain
+      description: Only if you picked "Other" above.
   - type: checkboxes
     id: release
     attributes:
