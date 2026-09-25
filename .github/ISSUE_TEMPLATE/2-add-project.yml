@@ -92,6 +92,7 @@ body:
     id: type
     attributes:
       label: Kind of work
+      description: A repository that does both has one row of each, and this picks the row the form writes. To add the second row, say so with the "Something else" form.
       options:
         - recomp (static recompilation of the shipped binary)
         - decomp (decompilation back to source)
