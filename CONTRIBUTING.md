@@ -61,7 +61,7 @@ Required: `id`, `game`, `system`, `type`, `project`, `status`, `repo`.
 | `system` | The platform of the binary you recompile or decompile: `N64`, `PS1`, `PS2`, `GameCube`, `Saturn`, `Dreamcast`, … Reuse an existing spelling so the filter stays tidy. |
 | `type` | `recomp` or `decomp`. |
 | `status` | `exploring`, `in-progress`, `playable`, `released`, `paused`. Self-reported, and separate from activity. |
-| `targets` | Where your build runs: `["PC", "Steam Deck", "Switch"]`. Different from `system`, which is the platform of the binary you recompile or decompile. |
+| `targets` | Where your build runs: `["PC", "Steam Deck", "Switch"]`. Different from `system`, which is the platform of the binary you recompile or decompile. Until you set it, the board shows the platforms your latest release's file names name (`win-x64`, `.AppImage`, `.apk`), marked as such. |
 | `toolchain` | Recompiler or toolkit: `N64recomp`, `Xenonrecomp`, `Rexglue`, `Psxrecomp`, `Snesrecomp`, `Decomp-toolkit`, `Splat`... Capital first letter, the rest lowercase. |
 | `approach` | Method, one line. |
 | `repo` | Public repository, any host. See below. |
@@ -71,8 +71,9 @@ Required: `id`, `game`, `system`, `type`, `project`, `status`, `repo`.
 | `notes` | Up to 600 characters. Long notes are fine, the table expands the cell. |
 | `updated` | `YYYY-MM-DD`, set for you on intake. |
 
-**Filled in automatically, leave them out:** `version` (latest release tag), `lastCommit`,
-`repoStatus`, `claimed`, `addedBy`. The daily job overwrites whatever you put there.
+**Filled in automatically, leave them out:** `version` (latest release tag), `builds`
+(platforms named in your latest release's file names), `lastCommit`, `repoStatus`, `claimed`,
+`addedBy`. The daily job overwrites whatever you put there.
 
 ## Repos that aren't on GitHub
 
