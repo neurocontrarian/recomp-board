@@ -68,6 +68,7 @@ body:
         - Saturn
         - Dreamcast
         - Neo Geo
+        - Neo Geo Pocket Color
         - Arcade
         - Virtual Boy
         - PC (DOS)
@@ -92,18 +93,13 @@ body:
     id: type
     attributes:
       label: Kind of work
-      description: A repository that does both has one row of each, and this picks the row the form writes. Tick "This repository does both" below to add the missing one.
+      description: A repository that does both gets one row of each. With "both", this form writes the two rows at once and adds the one that is missing; sent from the account that owns the repository, both are claimed.
       options:
         - recomp (static recompilation of the shipped binary)
         - decomp (decompilation back to source)
+        - both (a decomp and a recomp in this repository)
     validations:
       required: true
-  - type: checkboxes
-    id: both
-    attributes:
-      label: Both kinds of work
-      options:
-        - label: This repository does both, a decomp and a recomp. The board keeps one row of each; sent from the account that owns the repository, both rows are claimed at once.
   - type: input
     id: project
     attributes:
@@ -121,6 +117,7 @@ body:
     id: status
     attributes:
       label: Status
+      description: With "both", the status goes to the recomp row.
       options:
         - Exploring
         - In progress
