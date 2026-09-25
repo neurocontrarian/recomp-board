@@ -53,14 +53,18 @@ work, name); the owner writes the rest when they claim the row.
 
 ## Fields
 
+Every value the board accepts, with its limits, is listed on the site under
+[Every field and the values it takes](https://recomp.fyi/#values). That list is built from the
+code that reads the file, so it is the one to trust if this page ever lags behind.
+
 Required: `id`, `game`, `system`, `type`, `project`, `status`, `repo`.
 
 | Field | Notes |
 | --- | --- |
 | `id` | Lowercase slug, unique on the board. |
 | `system` | The platform of the binary you recompile or decompile: `N64`, `PS1`, `PS2`, `GameCube`, `Saturn`, `Dreamcast`, … Reuse an existing spelling so the filter stays tidy. |
-| `type` | `recomp` or `decomp`. |
-| `status` | `exploring`, `in-progress`, `playable`, `released`, `paused`. Self-reported, and separate from activity. |
+| `type` | `recomp` or `decomp`. A repository that does both writes `["decomp", "recomp"]` in its manifest and gets one row of each. |
+| `status` | `exploring`, `in-progress`, `playable`, `released`, `complete` (a decomp whose source is fully rebuilt), `paused`. Self-reported, and separate from activity. |
 | `targets` | Where your build runs: `["PC", "Steam Deck", "Switch"]`. Different from `system`, which is the platform of the binary you recompile or decompile. Until you set it, the board shows the platforms your latest release's file names name (`win-x64`, `.AppImage`, `.apk`), marked as such. |
 | `toolchain` | Recompiler or toolkit: `N64recomp`, `Xenonrecomp`, `Rexglue`, `Psxrecomp`, `Snesrecomp`, `Decomp-toolkit`, `Splat`... Capital first letter, the rest lowercase. |
 | `approach` | Method, one line. |
