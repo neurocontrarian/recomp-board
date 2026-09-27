@@ -10,7 +10,7 @@ body:
         minutes. If something is wrong it says exactly what; edit this issue and it runs again.
 
         **Your own project?** Send it from the account that owns the repository and the row is
-        yours (claimed): only you can edit it. Or commit a `.recomp-board.json` and use the
+        yours (claimed): only you can edit it. Or commit a `.recomp.json` and use the
         manifest form, which works whatever the account or the host.
 
         **Rules:** the repository must be public and have at least one commit. No ROMs, ISOs,

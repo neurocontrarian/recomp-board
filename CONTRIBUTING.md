@@ -19,13 +19,16 @@ reserves nothing, if two people want the same game, both get a row.
 
 ## The short way: a file in your own repo
 
-Commit `.recomp-board.json` at the root of your project:
+Commit `.recomp.json` at the root of your project:
 
 ```json
 {
+  "$schema": "https://recomp.fyi/schema/v1.json",
   "game": "Wave Race 64",
+  "wikidata": "Q3142278",
   "system": "N64",
   "type": "recomp",
+  "original": { "region": "USA", "revision": "1.0" },
   "status": "playable",
   "targets": ["PC", "Steam Deck"],
   "help": ["Audio timing"],
@@ -37,7 +40,11 @@ The daily job reads it, claims your row and fills it in. On GitHub it also finds
 repository that isn't listed yet and creates the row, as long as the file sets `game`,
 `system` and `type`. Every field is optional on a row that already exists, editing the file
 edits the row, and deleting the file returns the row to unclaimed. GitHub, GitLab, Codeberg,
-Gitea and Forgejo all work.
+Gitea and Forgejo all work. A file committed as `.recomp-board.json`, its first name, keeps
+working.
+
+The format is open (CC BY 4.0) and described at https://recomp.fyi/spec, so any other list
+or tool can read the same file. The `$schema` line lets editors check it as you type.
 
 To be listed right away, or on a host other than GitHub, open the
 [manifest form](../../issues/new?template=1-manifest.yml): it asks only for the repository
@@ -68,6 +75,8 @@ Required: `id`, `game`, `system`, `type`, `project`, `status`, `repo`.
 | `targets` | Where your build runs: `["PC", "Steam Deck", "Switch"]`. Different from `system`, which is the platform of the binary you recompile or decompile. Until you set it, the board shows the platforms your latest release's file names name (`win-x64`, `.AppImage`, `.apk`), marked as such. |
 | `toolchain` | Recompiler or toolkit: `N64recomp`, `Xenonrecomp`, `Rexglue`, `Psxrecomp`, `Snesrecomp`, `Decomp-toolkit`, `Splat`... Capital first letter, the rest lowercase. |
 | `approach` | Method, one line. |
+| `wikidata` | The game's Wikidata item (`Q` and digits), from its wikidata.org address. File only. |
+| `original` | The release you work from: `region`, `revision`, `serial`, `sha1` of the file you expect, each optional; a list when you support several. File only. |
 | `repo` | Public repository, any host. See below. |
 | `maintainers` | `name` plus any https link where you can be reached. |
 | `links` | Devlog, Discord invite, thread. Never a game file. |
@@ -98,7 +107,7 @@ third-party rows accountable.
 
 ## Claiming, editing, releasing
 
-Two ways to make a row yours: commit a `.recomp-board.json` to the repository (any host, any
+Two ways to make a row yours: commit a `.recomp.json` to the repository (any host, any
 account, and the way for repositories owned by an organisation), or send the
 [add or correct form](../../issues/new?template=2-add-project.yml) from the GitHub account
 that owns the repository. Only you can edit it from then on, and the periodic scan stops
