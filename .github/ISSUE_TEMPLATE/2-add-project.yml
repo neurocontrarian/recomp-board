@@ -13,7 +13,7 @@ body:
         yours (claimed): only you can edit it. Or commit a `.recomp.json` and use the
         manifest form, which works whatever the account or the host.
 
-        **Rules:** the repository must be public and have at least one commit. No ROMs, ISOs,
+        **Rules:** the repository must be public and hold more than a README and a licence, or have published a release. No ROMs, ISOs,
         game files or links to them. Two projects on the same game are both welcome.
 
         **Someone else's project?** Fill in the first part only. The row lands *unclaimed*,
@@ -242,7 +242,7 @@ body:
     attributes:
       label: Before sending
       options:
-        - label: The repository is public and has at least one commit.
+        - label: The repository is public and holds more than a README and a licence, or has a release.
           required: true
         - label: This issue contains no ROM, ISO, game file or link to one.
           required: true

@@ -11,5 +11,5 @@ Two ways to put a project on the board or change its row:
    correction, or to claim your row without the file. A bot checks the repository, writes the row and answers in the
    issue, usually within a few minutes.
 
-Rules: a public repository with at least one commit, no ROMs or links to game files, two
-projects on the same game are both welcome.
+Rules: a public repository that holds more than a README and a licence (or has published a
+release), no ROMs or links to game files, two projects on the same game are both welcome.
