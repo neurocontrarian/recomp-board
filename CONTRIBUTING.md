@@ -11,6 +11,7 @@ reserves nothing, if two people want the same game, both get a row.
    Dormant after 6 months (180 days), whatever its status. Automatic, no judgement involved.
    One exception: a row its owner marks `complete` has no clock.
 3. **`recomp` and `decomp` are separate.** Different work, different rows, separate filters.
+   A disassembly counts as a decomp: source, in C or in assembly, that rebuilds the original binary.
 4. **Anyone can add a row, the owner decides.** A row added for someone else lands *unclaimed*
    and is built only from public repo data. The repo owner can claim or correct it;
    until then, anyone may fix its details.
