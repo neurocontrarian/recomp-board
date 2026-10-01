@@ -40,8 +40,8 @@ body:
   - type: dropdown
     id: system
     attributes:
-      label: System of the binary you recompile or decompile
-      description: The platform of the binary your project works from (console, computer or arcade board), not where your build runs. A PS3 re-release of a Neo Geo game is PS3.
+      label: System of the original binary
+      description: The platform of the binary your project works from, whether you recompile it, decompile it or port the game from its decompiled source (console, computer or arcade board). Not where your build runs. A PS3 re-release of a Neo Geo game is PS3.
       options:
         - N64
         - PS1
@@ -154,7 +154,7 @@ body:
   - type: dropdown
     id: recomp_status
     attributes:
-      label: Recomp status
+      label: Recomp or source port status
       options:
         - Exploring
         - In progress
@@ -165,7 +165,7 @@ body:
   - type: checkboxes
     id: recomp_targets
     attributes:
-      label: Where the recomp runs
+      label: Where the recomp or source port runs
       options:
         - label: Windows
         - label: Linux
@@ -178,12 +178,13 @@ body:
   - type: input
     id: recomp_targets_other
     attributes:
-      label: Other recomp platforms
+      label: Other recomp or source port platforms
       description: Comma separated.
   - type: dropdown
     id: recomp_toolchain
     attributes:
-      label: Recomp toolchain
+      label: Recomp or source port toolchain
+      description: The recompiler, or for a source port the engine or layer it is built on. Not in the list, pick Other and write it below.
       options:
         - N64recomp
         - Xenonrecomp
@@ -204,7 +205,7 @@ body:
   - type: input
     id: recomp_toolchain_other
     attributes:
-      label: Other recomp toolchain
+      label: Other recomp or source port toolchain
       description: Only if you picked "Other" above.
   - type: markdown
     attributes:

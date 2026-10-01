@@ -74,11 +74,11 @@ Required: `id`, `game`, `system`, `type`, `project`, `status`, `repo`.
 | Field | Notes |
 | --- | --- |
 | `id` | Lowercase slug, unique on the board. |
-| `system` | The platform of the binary you recompile or decompile: `N64`, `PS1`, `PS2`, `GameCube`, `Saturn`, `Dreamcast`, … Reuse an existing spelling so the filter stays tidy. |
+| `system` | The platform of the original binary your project works from, whether you recompile it, decompile it or port the game from its decompiled source: `N64`, `PS1`, `PS2`, `GameCube`, `Saturn`, `Dreamcast`, … Reuse an existing spelling so the filter stays tidy. |
 | `type` | `recomp`, `port` (a source port) or `decomp`. A repository that does two of them writes a list in its manifest, `["decomp", "recomp"]` or `["decomp", "port"]`, and gets one row of each. |
 | `status` | `exploring`, `in-progress`, `playable`, `released`, `complete` (finished: a decomp whose source fully rebuilds the original, or a recomp or source port with no further work planned; the activity clock stops), `paused`. Self-reported, and separate from activity. |
-| `targets` | Where your build runs: `["PC", "Steam Deck", "Switch"]`. Different from `system`, which is the platform of the binary you recompile or decompile. Until you set it, the board shows the platforms your latest release's file names name (`win-x64`, `.AppImage`, `.apk`), marked as such. |
-| `toolchain` | Recompiler or toolkit: `N64recomp`, `Xenonrecomp`, `Rexglue`, `Psxrecomp`, `Snesrecomp`, `Decomp-toolkit`, `Splat`... Capital first letter, the rest lowercase. |
+| `targets` | Where your build runs: `["PC", "Steam Deck", "Switch"]`. Different from `system`, which is the platform of the original binary. Until you set it, the board shows the platforms your latest release's file names name (`win-x64`, `.AppImage`, `.apk`), marked as such. |
+| `toolchain` | Recompiler, decomp toolkit, or the engine or layer a source port is built on: `N64recomp`, `Xenonrecomp`, `Rexglue`, `Psxrecomp`, `Snesrecomp`, `Decomp-toolkit`, `Splat`... Capital first letter, the rest lowercase. |
 | `approach` | Method, one line. |
 | `wikidata` | The game's Wikidata item (`Q` and digits), from its wikidata.org address. File only. |
 | `original` | The release you work from: `region`, `revision`, `serial`, `sha1` of the file you expect, each optional; a list when you support several. File only. |
