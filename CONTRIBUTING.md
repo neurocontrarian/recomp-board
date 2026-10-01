@@ -10,8 +10,11 @@ reserves nothing, if two people want the same game, both get a row.
 2. **Silence expires.** A row goes Quiet after 3 months (90 days) without a commit and
    Dormant after 6 months (180 days), whatever its status. Automatic, no judgement involved.
    One exception: a row its owner marks `complete` has no clock.
-3. **`recomp` and `decomp` are separate.** Different work, different rows, separate filters.
-   A disassembly counts as a decomp: source, in C or in assembly, that rebuilds the original binary.
+3. **`recomp`, `port` and `decomp` are separate.** Different work, different rows, separate filters.
+   A recomp is the original binary translated by a tool into code that runs natively. A source
+   port (`port`) is the game built for today's machines from source code people wrote back: a
+   decompilation, a disassembly or a rewrite. A decomp is that source itself, in C or in assembly,
+   rebuilding the original binary; a disassembly counts as one.
 4. **Anyone can add a row, the owner decides.** A row added for someone else lands *unclaimed*
    and is built only from public repo data. The repo owner can claim or correct it;
    until then, anyone may fix its details.
@@ -72,8 +75,8 @@ Required: `id`, `game`, `system`, `type`, `project`, `status`, `repo`.
 | --- | --- |
 | `id` | Lowercase slug, unique on the board. |
 | `system` | The platform of the binary you recompile or decompile: `N64`, `PS1`, `PS2`, `GameCube`, `Saturn`, `Dreamcast`, … Reuse an existing spelling so the filter stays tidy. |
-| `type` | `recomp` or `decomp`. A repository that does both writes `["decomp", "recomp"]` in its manifest and gets one row of each. |
-| `status` | `exploring`, `in-progress`, `playable`, `released`, `complete` (finished: a decomp whose source fully rebuilds the original, or a recomp with no further work planned; the activity clock stops), `paused`. Self-reported, and separate from activity. |
+| `type` | `recomp`, `port` (a source port) or `decomp`. A repository that does two of them writes a list in its manifest, `["decomp", "recomp"]` or `["decomp", "port"]`, and gets one row of each. |
+| `status` | `exploring`, `in-progress`, `playable`, `released`, `complete` (finished: a decomp whose source fully rebuilds the original, or a recomp or source port with no further work planned; the activity clock stops), `paused`. Self-reported, and separate from activity. |
 | `targets` | Where your build runs: `["PC", "Steam Deck", "Switch"]`. Different from `system`, which is the platform of the binary you recompile or decompile. Until you set it, the board shows the platforms your latest release's file names name (`win-x64`, `.AppImage`, `.apk`), marked as such. |
 | `toolchain` | Recompiler or toolkit: `N64recomp`, `Xenonrecomp`, `Rexglue`, `Psxrecomp`, `Snesrecomp`, `Decomp-toolkit`, `Splat`... Capital first letter, the rest lowercase. |
 | `approach` | Method, one line. |

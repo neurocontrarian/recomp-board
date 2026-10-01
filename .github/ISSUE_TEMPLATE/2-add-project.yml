@@ -1,5 +1,5 @@
 name: Add or correct a project
-description: Put a recomp or decomp on the board, yours or someone else's, or fix a row.
+description: Put a recomp, a source port or a decomp on the board, yours or someone else's, or fix a row.
 title: "Add: "
 labels: ["intake"]
 body:
@@ -93,11 +93,13 @@ body:
     id: type
     attributes:
       label: Kind of work
-      description: A repository that does both gets one row of each. With "both", this form writes the two rows at once, each from its own section below, and adds the one that is missing; sent from the account that owns the repository, both are claimed.
+      description: A recomp is the binary translated by a recompiler; a source port is the game built natively from decompiled, disassembled or rewritten source. A repository that does both a decomp and one of those gets one row of each. With "both", this form writes the two rows at once, each from its own section below, and adds the one that is missing; sent from the account that owns the repository, both are claimed.
       options:
         - recomp (static recompilation of the shipped binary)
+        - source port (the game built natively from decompiled or rewritten source)
         - decomp (decompilation back to source)
         - both (a decomp and a recomp in this repository)
+        - both (a decomp and a source port in this repository)
     validations:
       required: true
   - type: input
@@ -147,8 +149,8 @@ body:
     attributes:
       value: |
         ---
-        ### Recomp (if applicable)
-        Fill this part when the kind of work is recomp or both.
+        ### Recomp or source port (if applicable)
+        Fill this part when the kind of work is recomp, source port or both.
   - type: dropdown
     id: recomp_status
     attributes:
