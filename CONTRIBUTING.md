@@ -44,8 +44,9 @@ Commit `.recomp.json` at the root of your project:
 The daily job reads it, claims your row and fills it in. On GitHub it also finds the file in a
 repository that isn't listed yet and creates the row, as long as the file sets `game`,
 `system` and `type`. Every field is optional on a row that already exists, editing the file
-edits the row, and deleting the file returns the row to unclaimed (what the file last said stays,
-except the notes and the maintainers; to clear a value, take it out of the file first). GitHub, GitLab, Codeberg,
+edits the row, and deleting the file returns the row to unclaimed (it keeps the `targets`, the
+`approach` and the `toolchain` the file last named, the rest of what the file said is cleared; to
+clear those three too, take them out of the file first). GitHub, GitLab, Codeberg,
 Gitea and Forgejo all work. A file committed as `.recomp-board.json`, its first name, keeps
 working.
 
