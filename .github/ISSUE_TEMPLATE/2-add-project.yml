@@ -145,6 +145,13 @@ body:
     attributes:
       label: Notes
       description: Up to 600 characters. What works, what's next, what hurts.
+  - type: checkboxes
+    id: release
+    attributes:
+      label: Give up this row (only if you already claimed it)
+      description: Leave this empty to add or correct a project. When it is ticked, nothing else in this form is applied.
+      options:
+        - label: Release my claim. The rows of this repository stay on the board, unclaimed, and anyone may correct them again.
   - type: markdown
     attributes:
       value: |
@@ -235,12 +242,6 @@ body:
     attributes:
       label: Other decomp toolchain
       description: Only if you picked "Other" above.
-  - type: checkboxes
-    id: release
-    attributes:
-      label: Hand the row back
-      options:
-        - label: Release my claim. The rows of this repository stay on the board, unclaimed, and anyone may correct them again.
   - type: checkboxes
     id: rules
     attributes:
