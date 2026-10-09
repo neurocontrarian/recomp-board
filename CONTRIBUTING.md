@@ -22,6 +22,18 @@ reserves nothing, if two people want the same game, both get a row.
 6. **No ROMs, ISOs, game assets or links to them.** Submissions carrying one are rejected by
    CI and removed on sight.
 
+## A decomp that publishes a progress report
+
+A decomp that publishes an objdiff progress report needs no file and no form to show its
+progress: the board reads the report every day. Upload `build/report.json` as a GitHub Actions
+artifact named `VERSION_report` (for example `SLUS_203.88_report`), from a workflow that runs on
+your default branch. The game page then shows the share of matched code, and the status In
+progress until it reaches 100%, then Complete, unless you have set a status yourself. When the
+repository publishes several versions of the game, a figure appears only if one of them is the
+release your row works from (the `original` field of the file) or if they agree within half a
+point. A file or the form still adds what a report cannot say: who maintains the project, whether
+it is paused or only exploring, notes, the help you want and the release you work from.
+
 ## The short way: a file in your own repo
 
 Commit `.recomp.json` at the root of your project:
