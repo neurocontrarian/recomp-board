@@ -28,7 +28,8 @@ A decomp that publishes an objdiff progress report needs no file and no form to 
 progress: the board reads the report every day. Upload `build/report.json` as a GitHub Actions
 artifact named `VERSION_report` (for example `SLUS_203.88_report`), from a workflow that runs on
 your default branch. The game page then shows the share of matched code, and the status In
-progress until it reaches 100%, then Complete, unless you have set a status yourself. When the
+progress until it reaches 100%, then Complete once the report also matches all the data, unless
+you have set a status yourself. When the
 repository publishes several versions of the game, a figure appears only if one of them is the
 release your row works from (the `original` field of the file) or if they agree within half a
 point. A file or the form still adds what a report cannot say: who maintains the project, whether
