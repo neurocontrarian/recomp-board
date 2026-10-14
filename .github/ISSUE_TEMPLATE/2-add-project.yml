@@ -82,6 +82,7 @@ body:
         - ZX Spectrum
         - Amstrad CPC
         - MSX
+        - MSX2
         - PC-98
         - Other (write it below)
     validations:
