@@ -11,7 +11,9 @@ reserves nothing, if two people want the same game, both get a row.
    Dormant after 6 months (180 days), whatever its status. Automatic, no judgement involved.
    One exception: a row its owner marks `complete` has no clock.
 3. **`recomp`, `port` and `decomp` are separate.** Different work, different rows, separate filters.
-   A recomp is the original binary translated by a tool into code that runs natively. A source
+   A recomp is the original binary translated by a tool into code that runs natively; for a
+   console whose processor a PC already has (PS4), the original code run as it is, on a runtime
+   written for the game (bbport and the ports built on it). A source
    port (`port`) is the game built for today's machines from source code people wrote back: a
    decompilation, a disassembly or a rewrite. A decomp is that source itself, in C or in assembly,
    rebuilding the original binary; a disassembly counts as one.

@@ -211,6 +211,7 @@ body:
         - Gb-recompiled
         - Segagenesisrecomp
         - Wiicompiled
+        - Bbport
         - Other (write it below)
   - type: input
     id: recomp_toolchain_other
