@@ -1,5 +1,5 @@
 name: My repository has a .recomp.json
-description: Point the board at your repository. The file in it is the row, nothing else to fill in.
+description: For a repository not on the board yet. A listed repository needs no form, its file is read every day.
 title: "Manifest: "
 labels: ["intake"]
 body:
@@ -12,9 +12,11 @@ body:
         proof: whoever can commit to the repository controls the row, so it doesn't matter
         which account opens this issue.
 
-        On GitHub the daily job also finds the file by itself, usually within a day. Use this
-        form to be listed right away, or when your repository is on GitLab, Codeberg, a Gitea
-        or Forgejo instance.
+        Already on the board? Nothing to send: the board reads the file of every listed
+        repository once a day, and every later edit too. Use this form only for a repository
+        not listed yet, to appear right away (on GitHub the daily job also finds new files by
+        itself, but that can take days), or for one on GitLab, Codeberg, a Gitea or Forgejo
+        instance.
 
         To create a new row the file needs at least `game`, `system` and `type`. The format
         is open and described at https://recomp.fyi/spec
