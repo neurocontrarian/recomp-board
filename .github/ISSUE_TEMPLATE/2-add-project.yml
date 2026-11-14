@@ -240,6 +240,7 @@ body:
       options:
         - Decomp-toolkit
         - Splat
+        - Arcade-decomp
         - Other (write it below)
   - type: input
     id: decomp_toolchain_other
