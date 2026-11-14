@@ -103,6 +103,9 @@ Required: `id`, `game`, `system`, `type`, `project`, `status`, `repo`.
 | `repo` | Public repository, any host. See below. |
 | `maintainers` | `name` plus any https link where you can be reached. |
 | `links` | Devlog, Discord invite, thread. Never a game file. |
+| `mirrors` | Other copies of the same code on other hosts (Codeberg, GitLab, Forgejo), up to 4 addresses. File only. |
+| `moved` | In the repository you are leaving: the new address. Put a `.recomp.json` there too and the row follows, claim and history included. File only. |
+| `previously` | In the new repository, when the old one was deleted: the old address. File only. |
 | `help` | Short phrases, one per thing you'd take a hand with. Highlighted on the board. |
 | `notes` | Up to 600 characters. Long notes are fine, the table expands the cell. |
 | `updated` | `YYYY-MM-DD`, set for you on intake. |
