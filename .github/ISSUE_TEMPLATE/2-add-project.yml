@@ -96,10 +96,10 @@ body:
     id: type
     attributes:
       label: Kind of work
-      description: A recomp is the binary translated by a recompiler; a source port is the game built natively from decompiled, disassembled or rewritten source. A repository that does both a decomp and one of those gets one row of each. With "both", this form writes the two rows at once, each from its own section below, and adds the one that is missing; sent from the account that owns the repository, both are claimed.
+      description: A recomp is the binary translated by a recompiler; a source port is the game built natively from its decompiled, disassembled or released source. A repository that does both a decomp and one of those gets one row of each. With "both", this form writes the two rows at once, each from its own section below, and adds the one that is missing; sent from the account that owns the repository, both are claimed.
       options:
         - recomp (static recompilation of the shipped binary)
-        - source port (the game built natively from decompiled or rewritten source)
+        - source port (the game built natively from its decompiled, disassembled or released source)
         - decomp (decompilation back to source)
         - both (a decomp and a recomp in this repository)
         - both (a decomp and a source port in this repository)
